@@ -1,0 +1,38 @@
+﻿<Window x:Class="atelierTask.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:atelierTask"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Storyboard x:Key="Storyboard1" RepeatBehavior="Forever" AutoReverse="True">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="sc#1, 0.603827357, 0.5271151, 0.1682694"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="sc#1, 0.658374846, 0.8713671, 0.0295568351"/>
+                <EasingColorKeyFrame KeyTime="0:0:1" Value="#FF61BF8C"/>
+                <EasingColorKeyFrame KeyTime="0:0:2" Value="#FF638FC3"/>
+                <EasingColorKeyFrame KeyTime="0:0:3" Value="#FF7D63C3"/>
+                <EasingColorKeyFrame KeyTime="0:0:3.7" Value="#FFC363B6"/>
+                <EasingColorKeyFrame KeyTime="0:0:4" Value="#FFC36370"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="469,98,0,0" VerticalAlignment="Top" Width="118" Height="50" Click="Button_Click_1"/>
+        <Button Content="Start" HorizontalAlignment="Left" Margin="130,67,0,0" VerticalAlignment="Top" Width="128" Height="63" Click="Button_Click"/>
+        <Label x:Name="Wfin" Content="" HorizontalAlignment="Left" Margin="415,275,0,0" VerticalAlignment="Top" Height="32" Width="193" Foreground="#FF020202" Background="#FFFFAFAF"/>
+        <TextBlock x:Name="wResult" HorizontalAlignment="Left" Margin="415,312,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="193" Background="#FFF9F4F4"/>
+        <Button Content="Start async with cancel" HorizontalAlignment="Left" Margin="130,275,0,0" VerticalAlignment="Top" Width="146" Height="62" Click="Button_Click_3"/>
+        <Button Content="Start sync" HorizontalAlignment="Left" Margin="114,189,0,0" VerticalAlignment="Top" Width="146" Height="53" Click="Button_Click_2"/>
+        <Button x:Name="btnGreeting" Content="Greeting" HorizontalAlignment="Left" Margin="481,175,0,0" VerticalAlignment="Top" Width="116" Height="51" AutomationProperties.Name="btnGreeting" Click="btnGreeting_Click"/>
+        <Rectangle x:Name="rectangle" HorizontalAlignment="Left" Height="100" Margin="326,142,0,0" Stroke="Black" VerticalAlignment="Top" Width="100" Fill="#FFA0D165"/>
+
+    </Grid>
+</Window>
